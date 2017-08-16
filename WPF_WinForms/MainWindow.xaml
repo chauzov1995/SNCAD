@@ -171,6 +171,6 @@
         <StatusBar Background="White"  Grid.Row="3" Visibility="{Binding ElementName=ActivateStatusbar, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}">
             <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=StatusBarText}"/>
         </StatusBar>
-        <Label Content="Никита" HorizontalAlignment="Left" Margin="643,5,0,0" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Width="113"/>
+        <Label Content="Никита ТЕСТ2" HorizontalAlignment="Left" Margin="643,5,0,0" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Width="113"/>
     </Grid>
 </Window>
