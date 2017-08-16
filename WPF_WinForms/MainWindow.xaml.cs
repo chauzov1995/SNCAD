@@ -43,7 +43,7 @@ namespace IE_WPF_WinForms
             Environment.SetEnvironmentVariable("PATH", env);
 
             var dir = Directory.GetFiles(@"C:\OpenCASCADE7.1.0-vc10-64\opencascade-7.1.0\data\occ");
-            foreach(string file in dir)
+            foreach (string file in dir)
             {
                 lb1.Items.Add(file);
 
@@ -182,7 +182,7 @@ namespace IE_WPF_WinForms
                     return null;
                 }
 
-                WindowsFormsHost aHost = (ViewPanel.SelectedContent) as WindowsFormsHost;
+                WindowsFormsHost aHost = (cc1.Content) as WindowsFormsHost;
                 if (aHost == null)
                 {
                     return null;
@@ -667,12 +667,28 @@ namespace IE_WPF_WinForms
         private void lb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            
+
             if (ActiveViewer != null)
             {
                 ActiveViewer.ImportModel1(lb1.SelectedValue.ToString());
             }
             //lb1.SelectedValue;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsFormsHost aHost = new WindowsFormsHost();
+            OCCViewer aForm = new OCCViewer();
+            aForm.Show();
+            aHost.Child = aForm;
+
+
+            myDocumentCounter++;
+
+            cc1.Content=(aHost);
+
+            // update XAML property
+            RaisePropertyChanged("IsDocumentOpen");
         }
     }
 }

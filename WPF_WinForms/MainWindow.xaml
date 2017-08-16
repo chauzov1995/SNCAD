@@ -157,7 +157,7 @@
 
             <TabControl Name="ViewPanel"
                     SelectionChanged="OnViewerChanged"
-                    Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=IsDocumentOpen, Converter={StaticResource boolToVisibilityConverter}}" Margin="0" Grid.Column="1" VerticalContentAlignment="Stretch">
+                    Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=IsDocumentOpen, Converter={StaticResource boolToVisibilityConverter}}" Margin="0,0,389,0" Grid.Column="1" VerticalContentAlignment="Stretch">
 
                 <TabControl.ContextMenu>
                     <ContextMenu>
@@ -167,10 +167,12 @@
                 </TabControl.ContextMenu>
 
             </TabControl>
+            <ContentControl x:Name="cc1" Content="ContentControl" Grid.Column="1" HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Height="327" Width="279"/>
         </Grid>
         <StatusBar Background="White"  Grid.Row="3" Visibility="{Binding ElementName=ActivateStatusbar, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}">
             <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=StatusBarText}"/>
         </StatusBar>
         <Label Content="Никита ТЕСТ2" HorizontalAlignment="Left" Margin="643,5,0,0" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Width="113"/>
+        <Button Content="сцена" HorizontalAlignment="Left" Margin="761,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>
