@@ -196,7 +196,7 @@ namespace IE_WPF_WinForms
         {
             get
             {
-                return ViewPanel.Items.Count > 0;
+                return cc1.Content !=null;
             }
         }
 
@@ -204,6 +204,7 @@ namespace IE_WPF_WinForms
 
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            /*
             WindowsFormsHost aHost = new WindowsFormsHost();
             OCCViewer aForm = new OCCViewer();
             aForm.Show();
@@ -219,10 +220,12 @@ namespace IE_WPF_WinForms
 
             // update XAML property
             RaisePropertyChanged("IsDocumentOpen");
+            */
         }
 
         private void CloseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            /*
             if (ViewPanel.Items.Count > 0)
             {
                 ViewPanel.Items.Remove(ViewPanel.SelectedItem);
@@ -230,6 +233,7 @@ namespace IE_WPF_WinForms
 
             // update XAML property
             RaisePropertyChanged("IsDocumentOpen");
+            */
         }
 
         private void CloseCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -690,5 +694,7 @@ namespace IE_WPF_WinForms
             // update XAML property
             RaisePropertyChanged("IsDocumentOpen");
         }
+
+      
     }
 }

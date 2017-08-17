@@ -154,20 +154,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <ListBox x:Name="lb1" Background="#FFFFD1D1" Margin="0" VerticalContentAlignment="Stretch" SelectionChanged="lb1_SelectionChanged"/>
-
-            <TabControl Name="ViewPanel"
-                    SelectionChanged="OnViewerChanged"
-                    Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=IsDocumentOpen, Converter={StaticResource boolToVisibilityConverter}}" Margin="0,0,389,0" Grid.Column="1" VerticalContentAlignment="Stretch">
-
-                <TabControl.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Command="local:IECommands.New" Style="{StaticResource popupItem}"/>
-                        <MenuItem Command="local:IECommands.Close" Style="{StaticResource popupItem}"/>
-                    </ContextMenu>
-                </TabControl.ContextMenu>
-
-            </TabControl>
-            <ContentControl x:Name="cc1" Content="ContentControl" Grid.Column="1" HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Height="327" Width="279"/>
+            <ContentControl x:Name="cc1" Grid.Column="1" Margin="0" VerticalContentAlignment="Stretch" />
         </Grid>
         <StatusBar Background="White"  Grid.Row="3" Visibility="{Binding ElementName=ActivateStatusbar, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}">
             <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=StatusBarText}"/>
